@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13U Baseball Practice Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .overview-item {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .overview-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .phase {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .phase-header {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .phase-content {
+            padding: 25px;
+        }
+
+        .drill-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #74b9ff;
+        }
+
+        .drill-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .drill-list {
+            list-style: none;
+        }
+
+        .drill-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .drill-list li:before {
+            content: "⚾";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+        }
+
+        .sub-drill {
+            margin-left: 20px;
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #27ae60;
+        }
+
+        .sub-drill h4 {
+            color: #27ae60;
+            margin-bottom: 8px;
+        }
+
+        .visual-drill {
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .visual-drill h4 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .cone-setup {
+            text-align: center;
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .position-tabs {
+            display: flex;
+            background: #ecf0f1;
+            border-radius: 10px 10px 0 0;
+            overflow: hidden;
+        }
+
+        .position-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background: #bdc3c7;
+            cursor: pointer;
+            transition: background 0.3s;
+            border: none;
+            font-weight: bold;
+        }
+
+        .position-tab.active {
+            background: #74b9ff;
+            color: white;
+        }
+
+        .position-content {
+            display: none;
+        }
+
+        .position-content.active {
+            display: block;
+        }
+
+        .timer {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .equipment {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .equipment h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .equipment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .equipment-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #74b9ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .position-tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚾ 13U Baseball Practice Plan</h1>
+            <p><strong>Duration:</strong> 2 Hours | <strong>Focus:</strong> Fundamentals, Footwork, Position-Specific Skills</p>
+        </div>
+
+        <div class="overview">
+            <h2>📋 Practice Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h3>Phase 1</h3>
+                    <p>Warm-Up & Stretching</p>
+                    <div class="timer">20 min</div>
+                </div>
+                <div class="overview-item">
+                    <h3>Phase 2</h3>
+                    <p>Position-Specific Training</p>
+                    <div class="timer">90 min</div>
+                </div>
+                <div class="overview-item">
+                    <h3>Phase 3</h3>
+                    <p>Team Defense & Situations</p>
+                    <div class="timer">40 min</div>
+                </div>
+                <div class="overview-item">
+                    <h3>Phase 4</h3>
+                    <p>Cool Down & Review</p>
+                    <div class="timer">10 min</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase">
+            <div class="phase-header">
+                🏃‍♂️ Phase 1: Warm-Up & Stretching (20 minutes)
+            </div>
+            <div class="phase-content">
+                <div class="drill-section">
+                    <h3>Dynamic Stretching (10 minutes)</h3>
+                    <ul class="drill-list">
+                        <li>Arm Circles: Forward and backward, gradually increasing size</li>
+                        <li>Leg Swings: Front-to-back and side-to-side</li>
+                        <li>Hip Rotations: Standing hip circles in both directions</li>
+                        <li>Walking Knee Hugs: 10 yards each direction</li>
+                        <li>Walking Lunges with Twist: 10 yards each direction</li>
+                        <li>High Knees: 10 yards each direction</li>
+                        <li>Butt Kicks: 10 yards each direction</li>
+                        <li>Carioca: 10 yards each direction (grapevine)</li>
+                    </ul>
+                </div>
+
+                <div class="drill-section">
+                    <h3>Baseball-Specific Warm-Up (10 minutes)</h3>
+                    <ul class="drill-list">
+                        <li>Light Jogging: 2-3 minutes around the field</li>
+                        <li>Shuffle Steps: Side-to-side movement, 10 yards each direction</li>
+                        <li>Backpedaling: 10 yards, then sprint forward</li>
+                        <li>Crossover Steps: Practice quick direction changes</li>
+                        <li>Light Throwing: Partner catch, gradually increasing distance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase">
+            <div class="phase-header">
+                🎯 Phase 2: Position-Specific Training (90 minutes)
+            </div>
+            <div class="phase-content">
+                <div class="position-tabs">
+                    <button class="position-tab active" onclick="showPosition('pitchers')">Pitchers</button>
+                    <button class="position-tab" onclick="showPosition('infielders')">Infielders</button>
+                    <button class="position-tab" onclick="showPosition('outfielders')">Outfielders</button>
+                </div>
+
+                <div id="pitchers" class="position-content active">
+                    <div class="drill-section">
+                        <h3>Footwork Drills (15 minutes)</h3>
+                        <div class="sub-drill">
+                            <h4>1. Pitching Rubber Work</h4>
+                            <ul class="drill-list">
+                                <li>Practice proper foot placement on rubber</li>
+                                <li>Balance drills on one leg</li>
+                                <li>Quick step-off moves to both sides</li>
+                            </ul>
+                        </div>
+                        <div class="sub-drill">
+                            <h4>2. Fielding Position Drills</h4>
+                            <ul class="drill-list">
+                                <li>Quick pivot to field bunts</li>
+                                <li>Covering first base footwork</li>
+                                <li>Backing up bases movement patterns</li>
+                            </ul>
+                        </div>
+                        <div class="sub-drill">
+                            <h4>3. Pickoff Moves</h4>
+                            <ul class="drill-list">
+                                <li>Practice quick, deceptive moves to first</li>
+                                <li>Quick step-off and throw to second</li>
+                                <li>Vary timing and delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="drill-section">
+                        <h3>Pitching Mechanics (15 minutes)</h3>
+                        <ul class="drill-list">
+                            <li>Long Toss: Gradually increase distance</li>
+                            <li>Bullpen Session: Focus on mechanics and control</li>
+                            <li>Pitch Location Work: Target specific zones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="infielders" class="position-content">
+                    <div class="drill-section">
+                        <h3>Footwork Fundamentals (20 minutes)</h3>
+                        <div class="sub-drill">
+                            <h4>1. Ready Position Drills</h4>
+                            <ul class="drill-list">
+                                <li>Proper stance and weight distribution</li>
+                                <li>Quick first step in all directions</li>
+                                <li>Lateral movement drills</li>
+                            </ul>
+                        </div>
+                        <div class="sub-drill">
+                            <h4>2. Ground Ball Footwork</h4>
+                            <ul class="drill-list">
+                                <li>Forehand: Right foot back, left foot forward</li>
+                                <li>Backhand: Left foot back, right foot forward</li>
+                                <li>In-between: Quick decision making on approach</li>
+                            </ul>
+                        </div>
+                        <div class="sub-drill">
+                            <h4>3. Throwing Position Footwork</h4>
+                            <ul class="drill-list">
+                                <li>Crow Hop: Practice proper footwork for long throws</li>
+                                <li>Quick Release: Short throws with minimal foot movement</li>
+                                <li>Double Play Turns: Pivot footwork at second base</li>
+                            </ul>
+                        </div>
+                        <div class="visual-drill">
+                            <h4>4. Angle Running Drills (5 minutes)</h4>
+                            <div class="cone-setup">
+                                <strong>Cone Setup:</strong><br>
+                                Place 3 cones in a triangle pattern (10-15 feet apart)<br><br>
+                                🔺<br>
+                                🔺 🔺
+                            </div>
+                            <ul class="drill-list">
+                                <li>Diagonal Approach: Run at 45-degree angle to cone, field ball, crow hop, throw</li>
+                                <li>Cross-Body Throws: Practice proper footwork for throws across the diamond</li>
+                                <li>Quick Pivot: After fielding, pivot on back foot to face throwing target</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="drill-section">
+                        <h3>Fielding Drills (10 minutes)</h3>
+                        <ul class="drill-list">
+                            <li>Fungo Ground Balls: Various speeds and directions</li>
+                            <li>Double Play Practice: 6-4-3, 4-6-3, 5-4-3</li>
+                            <li>Bunt Defense: Quick reactions and throws</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="outfielders" class="position-content">
+                    <div class="drill-section">
+                        <h3>Footwork and Movement (20 minutes)</h3>
+                        <div class="sub-drill">
+                            <h4>1. Drop Step Drills</h4>
+                            <ul class="drill-list">
+                                <li>Practice proper drop step technique</li>
+                                <li>Quick turn and run to ball</li>
+                                <li>Angle running to cut off balls</li>
+                            </ul>
+                        </div>
+                        <div class="sub-drill">
+                            <h4>2. Crossover Steps</h4>
+                            <ul class="drill-list">
+                                <li>Quick direction changes</li>
+                                <li>Efficient movement to balls</li>
+                                <li>Proper footwork for catching</li>
+                            </ul>
+                        </div>
+                        <div class="sub-drill">
+                            <h4>3. Route Running</h4>
+                            <ul class="drill-list">
+                                <li>Practice running proper routes to fly balls</li>
+                                <li>Communication calls ("I got it!")</li>
+                                <li>Backing up other outfielders</li>
+                            </ul>
+                        </div>
+                        <div class="visual-drill">
+                            <h4>4. Angle Running and Throwing Drills (5 minutes)</h4>
+                            <div class="cone-setup">
+                                <strong>Cone Setup:</strong><br>
+                                Place 4 cones in a diamond pattern (20-25 feet apart)<br><br>
+                                🔺<br>
+                                🔺 🔺<br>
+                                🔺
+                            </div>
+                            <ul class="drill-list">
+                                <li>Diagonal Pursuit: Run at angle to cone, catch ball, crow hop, throw to target</li>
+                                <li>Cutoff Angles: Practice running proper angles to cut off balls in gaps</li>
+                                <li>Throwing on the Run: Maintain proper footwork while throwing on the move</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="drill-section">
+                        <h3>Catching and Throwing (10 minutes)</h3>
+                        <ul class="drill-list">
+                            <li>Fly Ball Drills: Various heights and distances</li>
+                            <li>Long Throws: Practice proper crow hop technique</li>
+                            <li>Cutoff Throws: Accuracy and proper footwork</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase">
+            <div class="phase-header">
+                🏟️ Phase 3: Team Defense & Situations (40 minutes)
+            </div>
+            <div class="phase-content">
+                <div class="drill-section">
+                    <h3>Defensive Situations (20 minutes)</h3>
+                    <ul class="drill-list">
+                        <li>Bunt Defense: All positions practice their roles</li>
+                        <li>First and Third Situations: Pitcher and catcher communication</li>
+                        <li>Rundown Drills: Proper footwork and communication</li>
+                        <li>Cutoff and Relay: Outfield to infield communication</li>
+                    </ul>
+                </div>
+
+                <div class="drill-section">
+                    <h3>Base Running and Defense (20 minutes)</h3>
+                    <ul class="drill-list">
+                        <li>Steal Defense: Catcher and middle infielders</li>
+                        <li>Pickoff Plays: All positions practice their roles</li>
+                        <li>Tag Plays: Proper footwork and positioning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase">
+            <div class="phase-header">
+                🧘‍♂️ Phase 4: Cool Down & Review (10 minutes)
+            </div>
+            <div class="phase-content">
+                <div class="drill-section">
+                    <h3>Cool Down (5 minutes)</h3>
+                    <ul class="drill-list">
+                        <li>Light Stretching: Focus on major muscle groups</li>
+                        <li>Walking: Light walk around the field</li>
+                        <li>Hydration: Ensure all players are properly hydrated</li>
+                    </ul>
+                </div>
+
+                <div class="drill-section">
+                    <h3>Practice Review (5 minutes)</h3>
+                    <ul class="drill-list">
+                        <li>Highlights: Point out good plays and improvements</li>
+                        <li>Areas for Improvement: Identify specific skills to work on</li>
+                        <li>Next Practice: Preview what will be covered</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="equipment">
+            <h2>🛠️ Equipment Needed</h2>
+            <div class="equipment-list">
+                <div class="equipment-item">⚾ Baseballs (at least 2 dozen)</div>
+                <div class="equipment-item">🧤 Gloves for all players</div>
+                <div class="equipment-item">🏏 Bats and batting helmets</div>
+                <div class="equipment-item">🔺 Cones for drill setup</div>
+                <div class="equipment-item">🏠 Bases (if not on a field)</div>
+                <div class="equipment-item">🤖 Pitching machine (optional)</div>
+                <div class="equipment-item">⏱️ Stopwatch/timer</div>
+                <div class="equipment-item">🩹 First aid kit</div>
+                <div class="equipment-item">💧 Water and cups</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPosition(position) {
+            // Hide all position contents
+            const contents = document.querySelectorAll('.position-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.position-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected position content
+            document.getElementById(position).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html> 

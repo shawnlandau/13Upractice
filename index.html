@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #8B0000 0%, #696969 100%);
             min-height: 100vh;
         }
 
@@ -31,11 +31,11 @@
             padding: 30px;
             border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .header h1 {
-            color: #2c3e50;
+            color: #8B0000;
             font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -46,7 +46,7 @@
             padding: 25px;
             border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .overview-grid {
@@ -57,7 +57,7 @@
         }
 
         .overview-item {
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            background: linear-gradient(135deg, #DC143C, #8B0000);
             color: white;
             padding: 20px;
             border-radius: 10px;
@@ -74,11 +74,11 @@
             margin-bottom: 30px;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .phase-header {
-            background: linear-gradient(135deg, #fd79a8, #e84393);
+            background: linear-gradient(135deg, #DC143C, #8B0000);
             color: white;
             padding: 20px;
             font-size: 1.5em;
@@ -94,11 +94,11 @@
             padding: 20px;
             background: #f8f9fa;
             border-radius: 10px;
-            border-left: 5px solid #74b9ff;
+            border-left: 5px solid #DC143C;
         }
 
         .drill-section h3 {
-            color: #2c3e50;
+            color: #8B0000;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
@@ -117,7 +117,7 @@
             content: "⚾";
             position: absolute;
             left: 0;
-            color: #e74c3c;
+            color: #DC143C;
         }
 
         .sub-drill {
@@ -126,16 +126,16 @@
             padding: 10px;
             background: white;
             border-radius: 8px;
-            border-left: 3px solid #27ae60;
+            border-left: 3px solid #696969;
         }
 
         .sub-drill h4 {
-            color: #27ae60;
+            color: #8B0000;
             margin-bottom: 8px;
         }
 
         .visual-drill {
-            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            background: linear-gradient(135deg, #DC143C, #8B0000);
             color: white;
             padding: 15px;
             border-radius: 8px;
@@ -154,6 +154,26 @@
             padding: 10px;
             border-radius: 5px;
             margin: 10px 0;
+        }
+
+        .drill-visual {
+            text-align: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .drill-visual h5 {
+            color: #8B0000;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .visual-diagram {
+            font-size: 2em;
+            margin: 10px 0;
+            line-height: 1.2;
         }
 
         .position-tabs {
@@ -175,7 +195,7 @@
         }
 
         .position-tab.active {
-            background: #74b9ff;
+            background: #DC143C;
             color: white;
         }
 
@@ -188,7 +208,7 @@
         }
 
         .timer {
-            background: linear-gradient(135deg, #00b894, #00a085);
+            background: linear-gradient(135deg, #696969, #8B0000);
             color: white;
             padding: 10px 20px;
             border-radius: 25px;
@@ -202,11 +222,11 @@
             padding: 25px;
             border-radius: 15px;
             margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .equipment h2 {
-            color: #2c3e50;
+            color: #8B0000;
             margin-bottom: 20px;
         }
 
@@ -220,7 +240,7 @@
             background: #f8f9fa;
             padding: 10px;
             border-radius: 5px;
-            border-left: 3px solid #74b9ff;
+            border-left: 3px solid #DC143C;
         }
 
         @media (max-width: 768px) {
@@ -264,11 +284,6 @@
                 </div>
                 <div class="overview-item">
                     <h3>Phase 3</h3>
-                    <p>Team Defense & Situations</p>
-                    <div class="timer">40 min</div>
-                </div>
-                <div class="overview-item">
-                    <h3>Phase 4</h3>
                     <p>Cool Down & Review</p>
                     <div class="timer">10 min</div>
                 </div>
@@ -282,6 +297,13 @@
             <div class="phase-content">
                 <div class="drill-section">
                     <h3>Dynamic Stretching (10 minutes)</h3>
+                    <div class="drill-visual">
+                        <h5>🔄 Dynamic Movement Pattern</h5>
+                        <div class="visual-diagram">
+                            🏃‍♂️ → 🤸‍♂️ → 🏃‍♂️
+                        </div>
+                        <p>Flow through movements: Arm circles → Leg swings → Hip rotations</p>
+                    </div>
                     <ul class="drill-list">
                         <li>Arm Circles: Forward and backward, gradually increasing size</li>
                         <li>Leg Swings: Front-to-back and side-to-side</li>
@@ -296,6 +318,13 @@
 
                 <div class="drill-section">
                     <h3>Baseball-Specific Warm-Up (10 minutes)</h3>
+                    <div class="drill-visual">
+                        <h5>⚾ Baseball Movement Prep</h5>
+                        <div class="visual-diagram">
+                            🏃‍♂️ → 🔄 → ⚾
+                        </div>
+                        <p>Progressive warm-up: Jog → Shuffle → Throw</p>
+                    </div>
                     <ul class="drill-list">
                         <li>Light Jogging: 2-3 minutes around the field</li>
                         <li>Shuffle Steps: Side-to-side movement, 10 yards each direction</li>
@@ -321,6 +350,14 @@
                 <div id="pitchers" class="position-content active">
                     <div class="drill-section">
                         <h3>Footwork Drills (15 minutes)</h3>
+                        <div class="drill-visual">
+                            <h5>🏟️ Pitching Mound Work</h5>
+                            <div class="visual-diagram">
+                                🏟️<br>
+                                👤 → ⚾ → 🎯
+                            </div>
+                            <p>Rubber placement → Balance → Delivery</p>
+                        </div>
                         <div class="sub-drill">
                             <h4>1. Pitching Rubber Work</h4>
                             <ul class="drill-list">
@@ -349,6 +386,13 @@
 
                     <div class="drill-section">
                         <h3>Pitching Mechanics (15 minutes)</h3>
+                        <div class="drill-visual">
+                            <h5>🎯 Pitching Progression</h5>
+                            <div class="visual-diagram">
+                                📏 → 🎯 → ⚾<br>
+                                Long Toss → Location → Control
+                            </div>
+                        </div>
                         <ul class="drill-list">
                             <li>Long Toss: Gradually increase distance</li>
                             <li>Bullpen Session: Focus on mechanics and control</li>
@@ -360,6 +404,13 @@
                 <div id="infielders" class="position-content">
                     <div class="drill-section">
                         <h3>Footwork Fundamentals (20 minutes)</h3>
+                        <div class="drill-visual">
+                            <h5>🏃‍♂️ Infield Movement Pattern</h5>
+                            <div class="visual-diagram">
+                                🎯 → ⚾ → 🏃‍♂️ → 🎯<br>
+                                Ready → Field → Move → Throw
+                            </div>
+                        </div>
                         <div class="sub-drill">
                             <h4>1. Ready Position Drills</h4>
                             <ul class="drill-list">
@@ -392,6 +443,13 @@
                                 🔺<br>
                                 🔺 🔺
                             </div>
+                            <div class="drill-visual">
+                                <h5>🔺 Triangle Angle Work</h5>
+                                <div class="visual-diagram">
+                                    🏃‍♂️ → 🔺 → ⚾ → 🎯<br>
+                                    Run → Cone → Field → Throw
+                                </div>
+                            </div>
                             <ul class="drill-list">
                                 <li>Diagonal Approach: Run at 45-degree angle to cone, field ball, crow hop, throw</li>
                                 <li>Cross-Body Throws: Practice proper footwork for throws across the diamond</li>
@@ -402,6 +460,13 @@
 
                     <div class="drill-section">
                         <h3>Fielding Drills (10 minutes)</h3>
+                        <div class="drill-visual">
+                            <h5>⚾ Ground Ball Progression</h5>
+                            <div class="visual-diagram">
+                                ⚾ → 🏃‍♂️ → 🎯 → ⚾<br>
+                                Ball → Field → Throw → Next
+                            </div>
+                        </div>
                         <ul class="drill-list">
                             <li>Fungo Ground Balls: Various speeds and directions</li>
                             <li>Double Play Practice: 6-4-3, 4-6-3, 5-4-3</li>
@@ -413,6 +478,13 @@
                 <div id="outfielders" class="position-content">
                     <div class="drill-section">
                         <h3>Footwork and Movement (20 minutes)</h3>
+                        <div class="drill-visual">
+                            <h5>🌤️ Outfield Movement Pattern</h5>
+                            <div class="visual-diagram">
+                                👁️ → 🏃‍♂️ → ⚾ → 🎯<br>
+                                Read → Run → Catch → Throw
+                            </div>
+                        </div>
                         <div class="sub-drill">
                             <h4>1. Drop Step Drills</h4>
                             <ul class="drill-list">
@@ -446,6 +518,13 @@
                                 🔺 🔺<br>
                                 🔺
                             </div>
+                            <div class="drill-visual">
+                                <h5>💎 Diamond Pattern Work</h5>
+                                <div class="visual-diagram">
+                                    🏃‍♂️ → 🔺 → ⚾ → 🎯<br>
+                                    Run → Cone → Catch → Throw
+                                </div>
+                            </div>
                             <ul class="drill-list">
                                 <li>Diagonal Pursuit: Run at angle to cone, catch ball, crow hop, throw to target</li>
                                 <li>Cutoff Angles: Practice running proper angles to cut off balls in gaps</li>
@@ -456,6 +535,13 @@
 
                     <div class="drill-section">
                         <h3>Catching and Throwing (10 minutes)</h3>
+                        <div class="drill-visual">
+                            <h5>🌤️ Fly Ball Work</h5>
+                            <div class="visual-diagram">
+                                👁️ → 🏃‍♂️ → ⚾ → 🎯<br>
+                                Track → Run → Catch → Throw
+                            </div>
+                        </div>
                         <ul class="drill-list">
                             <li>Fly Ball Drills: Various heights and distances</li>
                             <li>Long Throws: Practice proper crow hop technique</li>
@@ -468,37 +554,18 @@
 
         <div class="phase">
             <div class="phase-header">
-                🏟️ Phase 3: Team Defense & Situations (40 minutes)
-            </div>
-            <div class="phase-content">
-                <div class="drill-section">
-                    <h3>Defensive Situations (20 minutes)</h3>
-                    <ul class="drill-list">
-                        <li>Bunt Defense: All positions practice their roles</li>
-                        <li>First and Third Situations: Pitcher and catcher communication</li>
-                        <li>Rundown Drills: Proper footwork and communication</li>
-                        <li>Cutoff and Relay: Outfield to infield communication</li>
-                    </ul>
-                </div>
-
-                <div class="drill-section">
-                    <h3>Base Running and Defense (20 minutes)</h3>
-                    <ul class="drill-list">
-                        <li>Steal Defense: Catcher and middle infielders</li>
-                        <li>Pickoff Plays: All positions practice their roles</li>
-                        <li>Tag Plays: Proper footwork and positioning</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="phase">
-            <div class="phase-header">
-                🧘‍♂️ Phase 4: Cool Down & Review (10 minutes)
+                🧘‍♂️ Phase 3: Cool Down & Review (10 minutes)
             </div>
             <div class="phase-content">
                 <div class="drill-section">
                     <h3>Cool Down (5 minutes)</h3>
+                    <div class="drill-visual">
+                        <h5>🧘‍♂️ Recovery Pattern</h5>
+                        <div class="visual-diagram">
+                            🏃‍♂️ → 🚶‍♂️ → 💧<br>
+                            Active → Walk → Hydrate
+                        </div>
+                    </div>
                     <ul class="drill-list">
                         <li>Light Stretching: Focus on major muscle groups</li>
                         <li>Walking: Light walk around the field</li>
@@ -508,6 +575,13 @@
 
                 <div class="drill-section">
                     <h3>Practice Review (5 minutes)</h3>
+                    <div class="drill-visual">
+                        <h5>📋 Review Process</h5>
+                        <div class="visual-diagram">
+                            ✅ → 💭 → 📝<br>
+                            Highlights → Feedback → Next Steps
+                        </div>
+                    </div>
                     <ul class="drill-list">
                         <li>Highlights: Point out good plays and improvements</li>
                         <li>Areas for Improvement: Identify specific skills to work on</li>

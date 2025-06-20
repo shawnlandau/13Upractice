@@ -162,18 +162,60 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .drill-visual h5 {
             color: #8B0000;
             margin-bottom: 10px;
             font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .visual-diagram {
             font-size: 2em;
             margin: 10px 0;
             line-height: 1.2;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .step-by-step {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            margin: 0 5px;
+        }
+
+        .step-number {
+            background: #DC143C;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+            font-weight: bold;
+        }
+
+        .step-arrow {
+            font-size: 1.5em;
+            color: #DC143C;
+            margin: 0 10px;
         }
 
         .position-tabs {
@@ -416,6 +458,25 @@
                                     ⚾ → 🎯<br>
                                     <small>Feet shoulder-width, knees bent, weight forward</small>
                                 </div>
+                                <div class="step-by-step">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div>🦵 🦵</div>
+                                        <small>Feet apart</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div>👤</div>
+                                        <small>Knees bent</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div>⚾</div>
+                                        <small>Ready to move</small>
+                                    </div>
+                                </div>
                             </div>
                             <ul class="drill-list">
                                 <li>Proper stance and weight distribution</li>
@@ -437,6 +498,31 @@
                                     ⚾ ← 👤<br>
                                     <small>Left foot back, right foot forward</small>
                                 </div>
+                                <div class="step-by-step">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div>👁️</div>
+                                        <small>Read ball</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div>🦵</div>
+                                        <small>Step back</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div>⚾</div>
+                                        <small>Field ball</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">4</div>
+                                        <div>🎯</div>
+                                        <small>Throw</small>
+                                    </div>
+                                </div>
                             </div>
                             <ul class="drill-list">
                                 <li>Forehand: Right foot back, left foot forward</li>
@@ -456,6 +542,31 @@
                                     <strong>Quick Release:</strong><br>
                                     👤 → 🎯<br>
                                     <small>Minimal foot movement</small>
+                                </div>
+                                <div class="step-by-step">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div>⚾</div>
+                                        <small>Field ball</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div>🦵</div>
+                                        <small>Step</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div>🦵</div>
+                                        <small>Hop</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">4</div>
+                                        <div>🎯</div>
+                                        <small>Throw</small>
+                                    </div>
                                 </div>
                             </div>
                             <ul class="drill-list">
@@ -480,6 +591,31 @@
                                     <strong>Movement Pattern:</strong><br>
                                     👤 → 🔺 → ⚾ → 🎯<br>
                                     <small>45° angle approach, field, crow hop, throw</small>
+                                </div>
+                                <div class="step-by-step">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div>👤</div>
+                                        <small>Start</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div>🔺</div>
+                                        <small>Run to cone</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div>⚾</div>
+                                        <small>Field ball</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">4</div>
+                                        <div>🎯</div>
+                                        <small>Throw</small>
+                                    </div>
                                 </div>
                             </div>
                             <ul class="drill-list">
@@ -532,6 +668,31 @@
                                     🦵 → 🦵 → 🏃‍♂️<br>
                                     <small>Step back → Pivot → Sprint</small>
                                 </div>
+                                <div class="step-by-step">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div>👁️</div>
+                                        <small>Read ball</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div>⬇️</div>
+                                        <small>Drop step</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div>🔄</div>
+                                        <small>Turn</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">4</div>
+                                        <div>🏃‍♂️</div>
+                                        <small>Sprint</small>
+                                    </div>
+                                </div>
                             </div>
                             <ul class="drill-list">
                                 <li>Practice proper drop step technique</li>
@@ -552,6 +713,31 @@
                                     ← 👤 →<br>
                                     <small>Quick lateral movement</small>
                                 </div>
+                                <div class="step-by-step">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div>👁️</div>
+                                        <small>Read direction</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div>🦵</div>
+                                        <small>Cross step</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div>🦵</div>
+                                        <small>Cross step</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">4</div>
+                                        <div>⚾</div>
+                                        <small>Catch</small>
+                                    </div>
+                                </div>
                             </div>
                             <ul class="drill-list">
                                 <li>Quick direction changes</li>
@@ -571,6 +757,31 @@
                                     <strong>Communication:</strong><br>
                                     👤 → 👤 → 👤<br>
                                     "I got it!" → "You take it!" → "Mine!"
+                                </div>
+                                <div class="step-by-step">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div>👁️</div>
+                                        <small>Track ball</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div>🏃‍♂️</div>
+                                        <small>Run route</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div>📢</div>
+                                        <small>Call it</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">4</div>
+                                        <div>⚾</div>
+                                        <small>Catch</small>
+                                    </div>
                                 </div>
                             </div>
                             <ul class="drill-list">
@@ -600,6 +811,31 @@
                                     🔺 → 🔺 → 🔺 → 🔺<br>
                                     <small>Run angles to cut off balls in gaps</small>
                                 </div>
+                                <div class="step-by-step">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div>👤</div>
+                                        <small>Start</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div>🔺</div>
+                                        <small>Run to cone</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div>⚾</div>
+                                        <small>Catch ball</small>
+                                    </div>
+                                    <div class="step-arrow">→</div>
+                                    <div class="step">
+                                        <div class="step-number">4</div>
+                                        <div>🎯</div>
+                                        <small>Throw</small>
+                                    </div>
+                                </div>
                             </div>
                             <ul class="drill-list">
                                 <li>Diagonal Pursuit: Run at angle to cone, catch ball, crow hop, throw to target</li>
@@ -622,6 +858,31 @@
                                 <strong>Long Throw Mechanics:</strong><br>
                                 🦵 → 🦵 → 🎯<br>
                                 <small>Step → Hop → Throw</small>
+                            </div>
+                            <div class="step-by-step">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div>👁️</div>
+                                    <small>Track ball</small>
+                                </div>
+                                <div class="step-arrow">→</div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div>🏃‍♂️</div>
+                                    <small>Run route</small>
+                                </div>
+                                <div class="step-arrow">→</div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div>⚾</div>
+                                    <small>Catch</small>
+                                </div>
+                                <div class="step-arrow">→</div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div>🎯</div>
+                                    <small>Throw</small>
+                                </div>
                             </div>
                         </div>
                         <ul class="drill-list">
